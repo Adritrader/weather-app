@@ -1,0 +1,13 @@
+* { margin: 0px; padding: 0px; block-size: border-box;}
+
+.weather {
+
+    min-height: 50vh;
+    display: flex;
+    background: #99d1e7;
+    border-radius: 40px;
+    padding: 10px;
+
+
+
+}
