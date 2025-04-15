@@ -1,20 +1,19 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import './AppWeather.css'
 import search_icon from './images/search.png'
 import sunny_icon from './images/sunny.png'
 import cloudy_icon from './images/cloudy.png'
-import humidity_icon from './images/humidity.png'
 import rain_icon from './images/rain.png'
 import snow_icon from './images/snow.png'
 import sunnycloudy_icon from './images/sunnycloudy.png'
-import wind_icon from './images/wind.png'
-import { FaWind } from "react-icons/fa";
-import { WiHumidity } from "react-icons/wi";
+import { FaWind } from "react-icons/fa"
+import { WiHumidity } from "react-icons/wi"
 
 
 
 export const AppWeather = () => {
 
+  const inputRef = useRef()
 
   const [weatherData, setWeatherData] = useState(false);
 
@@ -37,6 +36,13 @@ export const AppWeather = () => {
 
 
     const search = async (city)=>{
+
+      if(city === ""){
+
+        alert("Inserta el nombre de una ciudad");
+        return;
+
+      }
 
         try {
 
@@ -74,9 +80,12 @@ export const AppWeather = () => {
   return (
     <div className='weather'>
       <div className='search-bar'>
-        <input type='text' placeholder='Buscar' />
-          <img src={search_icon} alt='' />    
-      </div> 
+        <input ref={inputRef} type='text' placeholder='Buscar' />
+          <img src={search_icon} alt='' onClick={()=>search(inputRef.current.value)}/>
+      </div>
+
+      {weatherData?<>
+      
       <img src={sunny_icon} alt='' className='weather-icon' />
       <p className='temperature'>{weatherData.temperature}ºC</p>
       <p className='location'>{weatherData.location}</p> 
@@ -94,8 +103,10 @@ export const AppWeather = () => {
             
           </div>
       </div>
-      
-      
+            
+            
+            
+            </>:<></>} 
     </div>
   )
 }
