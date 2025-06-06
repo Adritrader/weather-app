@@ -2,7 +2,7 @@
 
 Una aplicación sencilla hecha con **React** que te permite consultar el **clima actual**, la **temperatura** y la **humedad** de cualquier ciudad. Utiliza la API de [OpenWeatherMap](https://openweathermap.org/api).
 
-<a href="https://imgur.com/a/cXdFLfF"><img src="https://i.imgur.com/a/cXdFLfF" /></a>
+<blockquote class="imgur-embed-pub" lang="en" data-id="a/cXdFLfF"><a href="//imgur.com/cXdFLfF"></a></blockquote><script async src="//s.imgur.com/min/embed.js" charset="utf-8"></script>
 
 ## ✨ Características
 
